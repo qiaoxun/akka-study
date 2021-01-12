@@ -47,7 +47,7 @@ class Main extends AbstractBehavior<String> {
 
     @Override
     public Receive<String> createReceive() {
-        return null;
+        return newReceiveBuilder().onMessageEquals("start", this::start).build();
     }
 
     private Behavior<String> start() {
